@@ -21,7 +21,7 @@ class project(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=projectStatus.choices, default=projectStatus.PENDING)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE , null= True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
 
     def __str__(self):
