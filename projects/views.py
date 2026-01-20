@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class projectListView(LoginRequiredMixin,ListView):
     model = models.project
     template_name = 'project/list.html'
-    paginate_by = 3
+    paginate_by = 6
     def get_queryset(self):
         query_set = super().get_queryset()
         where = {}
