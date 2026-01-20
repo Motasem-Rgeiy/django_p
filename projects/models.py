@@ -1,13 +1,14 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils.translation import gettext as _
 
 # Create your models here.
 
 class projectStatus(models.IntegerChoices):
-    PENDING = 1 , 'pending'
-    COMPLETED = 2 , 'completed'
-    POSTPONED = 3 , 'postponed'
-    CANCELED = 4 , 'canceled'
+    PENDING = 1 , _('pending')
+    COMPLETED = 2 , _('completed')
+    POSTPONED = 3 , _('postponed')
+    CANCELED = 4 , _('canceled')
 
 class Category(models.Model):
     name = models.CharField()
